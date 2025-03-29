@@ -84,6 +84,53 @@ docker compose up -d
 * http://Server_IP:3010/
 * https://Server_IP:3011/
 
+
+## Install Proxy on Chromium
+**1- Stop currently running container**
+```bash
+docker-compose down -v
+```
+
+**2- Update your `docker-compose.yml`:**
+* Replace `CUSTOM_USER` & `PASSWORD` with your Chromium credentials.
+* Delete one of `CHROME_CLI` lines depending your proxy is `http` or `socks5` and replace `proxy.example.com:1080` with your proxy address and port.
+```yaml
+---
+services:
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
+    container_name: chromium
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - CUSTOM_USER=      #Replace username
+      - PASSWORD=      #Replace username
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - CHROME_CLI=--proxy-server=http://proxy.example.com:1080 https://google.com
+      - CHROME_CLI=--proxy-server=socks5://proxy.example.com:1080 https://google.com
+    volumes:
+      - /root/chromium/config:/config
+    ports:
+      - 3010:3000
+      - 3011:3001
+    shm_size: "1gb"
+    restart: unless-stopped
+```
+
+**3- Start container**
+```bash
+docker-compose down -v
+docker-compose up -d
+```
+
+**4- Access to your Chromium using `http://Server_IP:3010/` or `https://Server_IP:3011/`
+* It asks you to enter your `chromium` credential first, then it asks for `proxy` credential.
+
+![image](https://github.com/user-attachments/assets/50a05730-b4c3-45cd-967a-f3a8e156e22d)
+
+
 ## Optional: Stop and Delete Chromium
 ```
 docker stop chromium
