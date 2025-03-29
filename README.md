@@ -86,6 +86,11 @@ docker compose up -d
 
 
 ## Install Proxy on Chromium
+### 1) Buy Proxy
+* You can use any site to buy a **Static Residential** proxy.
+* I bought a proxy via crypto payments [here](https://iproyal.com/?r=835672)
+
+### 2) Install Proxy in Docker
 **1- Stop currently running container**
 ```bash
 docker compose down -v
@@ -126,7 +131,7 @@ docker compose up -d
 ```
 
 **4- Access to your Chromium using `http://Server_IP:3010/` or `https://Server_IP:3011/`
-* It asks you to enter your `chromium` credential first, then it asks for `proxy` credential.
+* First it asks you to enter your `chromium` credential, then it asks for `proxy` credential (if your proxy has credential).
 
 ![image](https://github.com/user-attachments/assets/50a05730-b4c3-45cd-967a-f3a8e156e22d)
 
