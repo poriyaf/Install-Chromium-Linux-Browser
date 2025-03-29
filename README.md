@@ -88,7 +88,7 @@ docker compose up -d
 ## Install Proxy on Chromium
 **1- Stop currently running container**
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 **2- Update your `docker-compose.yml`:**
@@ -121,8 +121,8 @@ services:
 
 **3- Start container**
 ```bash
-docker-compose down -v
-docker-compose up -d
+docker compose down -v
+docker compose up -d
 ```
 
 **4- Access to your Chromium using `http://Server_IP:3010/` or `https://Server_IP:3011/`
