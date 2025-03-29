@@ -130,7 +130,7 @@ docker compose down -v
 docker compose up -d
 ```
 
-**4- Access to your Chromium using `http://Server_IP:3010/` or `https://Server_IP:3011/`
+**4- Access to your Chromium using `http://Server_IP:3010/` or `https://Server_IP:3011/`**
 * First it asks you to enter your `chromium` credential, then it asks for `proxy` credential (if your proxy has credential).
 
 ![image](https://github.com/user-attachments/assets/50a05730-b4c3-45cd-967a-f3a8e156e22d)
