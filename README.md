@@ -84,8 +84,9 @@ docker compose up -d
 * http://Server_IP:3010/
 * https://Server_IP:3011/
 
+---
 
-# Install Proxy on Chromium
+# ⭐ Install Proxy on Chromium
 ## 1) Buy Proxy
 * You can use any reliable platform to buy a **Static Residential** proxy.
 * I bought a proxy via crypto payments on [iproyal](https://iproyal.com/?r=835672)
