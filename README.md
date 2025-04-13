@@ -102,28 +102,30 @@ docker compose down -v
 * Delete one of `CHROME_CLI` lines depending your proxy is `http` or `socks5` and replace `proxy.example.com:1080` with your proxy address and port.
 ```yaml
 ---
+---
 services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
     container_name: chromium
     security_opt:
-      - seccomp:unconfined
+      - seccomp:unconfined #optional
     environment:
-      - CUSTOM_USER=      #Replace username
-      - PASSWORD=      #Replace username
+      - CUSTOM_USER=     #Replace username
+      - PASSWORD=    #Replace password
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Berlin
+      - TZ=Europe/London
       - CHROME_CLI=--proxy-server=http://proxy.example.com:1080 https://google.com
       - CHROME_CLI=--proxy-server=socks5://proxy.example.com:1080 https://google.com
     volumes:
       - /root/chromium/config:/config
     ports:
-      - 3010:3000
-      - 3011:3001
+      - 3010:3000   #Change 3010 to your favorite port if needed
+      - 3011:3001   #Change 3011 to your favorite port if needed
     shm_size: "1gb"
     restart: unless-stopped
 ```
+
 
 **3- Start container**
 ```bash
