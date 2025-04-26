@@ -102,7 +102,6 @@ docker compose down -v
 * Delete one of `CHROME_CLI` lines depending your proxy is `http` or `socks5` and replace `proxy.example.com:1080` with your proxy address and port.
 ```yaml
 ---
----
 services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
