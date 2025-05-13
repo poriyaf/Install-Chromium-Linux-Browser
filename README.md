@@ -50,7 +50,6 @@ nano docker-compose.yaml
 * `CHROME_CLI`: The main page when you open browser
 * `ports`: You can replace `3010` & `3011` if they have conflict
 ```
----
 services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
@@ -101,7 +100,6 @@ docker compose down -v
 * Replace `CUSTOM_USER` & `PASSWORD` with your Chromium credentials.
 * Delete one of `CHROME_CLI` lines depending your proxy is `http` or `socks5` and replace `proxy.example.com:1080` with your proxy address and port.
 ```yaml
----
 services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
