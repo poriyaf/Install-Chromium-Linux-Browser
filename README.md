@@ -87,7 +87,7 @@ docker compose up -d
 
 # ⭐ Install Proxy on Chromium
 ## 1) Buy Proxy
-* You can use any reliable platform to buy a **Static Residential** proxy.
+* You can use any reliable platform to buy a **Static Residential(ISP)** proxy.
 * I bought a proxy via crypto payments on [iproyal](https://iproyal.com/?r=835672)
 
 ## 2) Install Proxy in Docker
